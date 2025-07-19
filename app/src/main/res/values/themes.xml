@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Snaptaskv01" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#184A8C</item> <!-- Deep Sapphire Blue -->
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">#A1E3B9</item> <!-- Soft Mint Green -->
+        <item name="colorOnSecondary">#2C2C2C</item>
+
+        <!-- Background and surface -->
+        <item name="android:colorBackground">#F9FAFB</item> <!-- Whisper White -->
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#2C2C2C</item>
+
+        <!-- Accent, success, warning -->
+        <item name="colorError">#FF7A5C</item> <!-- Energetic Coral as error/accent -->
+        <item name="colorSecondaryContainer">#2ECC71</item> <!-- Emerald Green (Success) -->
+        <item name="colorTertiary">#FFC107</item> <!-- Amber Yellow (Warning) -->
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">#2C2C2C</item> <!-- Charcoal Black -->
+        <item name="android:textColorSecondary">#6C757D</item> <!-- Slate Gray -->
+
+        <!-- Optional: remove action bar if using custom toolbar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
