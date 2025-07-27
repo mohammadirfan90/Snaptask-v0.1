@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/box_border.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@android:color/transparent" /> <!-- ভিতরের কালার -->
+
+    <stroke
+        android:width="2dp"
+        android:color="#D3D3D3" /> <!-- বর্ডার রঙ -->
+
+    <corners android:radius="8dp" /> <!-- কোণা গোল করতে চাইলে -->
+</shape>

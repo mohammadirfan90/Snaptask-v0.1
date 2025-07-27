@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Snaptaskv01">
         <activity
+            android:name=".sign_up"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
