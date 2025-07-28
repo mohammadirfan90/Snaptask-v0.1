@@ -29,22 +29,34 @@
     android:backgroundTint="#F9FAFB"
     >
 
-    <!-- Container for fragments -->
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <!-- Bottom Navigation -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSignOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="labeled"
-        app:itemIconTint="?android:textColorPrimary"
-        app:itemTextColor="?android:textColorPrimary"
-        app:backgroundTint="?android:textColorPrimary" />
+        app:cornerRadius="10dp"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:text="SIGN OUT"
+        android:textSize="18sp"/>
+
+<!--    &lt;!&ndash; Container for fragments &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fragment_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+<!--    &lt;!&ndash; Bottom Navigation &ndash;&gt;-->
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_navigation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        app:menu="@menu/bottom_nav_menu"-->
+<!--        app:labelVisibilityMode="labeled"-->
+<!--        app:itemIconTint="?android:textColorPrimary"-->
+<!--        app:itemTextColor="?android:textColorPrimary"-->
+<!--        app:backgroundTint="?android:textColorPrimary" />-->
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
