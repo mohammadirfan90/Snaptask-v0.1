@@ -20,26 +20,26 @@
 <!--        android:textSize="30sp"/>-->
 <!--</LinearLayout>-->
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:backgroundTint="#F9FAFB"
-    >
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:id="@+id/main_container"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:backgroundTint="#F9FAFB"-->
+<!--    >-->
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonSignOut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cornerRadius="10dp"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="20dp"
-        android:text="SIGN OUT"
-        android:textSize="18sp"/>
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/buttonSignOut"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cornerRadius="10dp"-->
+<!--        android:paddingStart="20dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingEnd="20dp"-->
+<!--        android:paddingBottom="20dp"-->
+<!--        android:text="SIGN OUT"-->
+<!--        android:textSize="18sp"/>-->
 
 <!--    &lt;!&ndash; Container for fragments &ndash;&gt;-->
 <!--    <FrameLayout-->
@@ -58,5 +58,35 @@
 <!--        app:itemIconTint="?android:textColorPrimary"-->
 <!--        app:itemTextColor="?android:textColorPrimary"-->
 <!--        app:backgroundTint="?android:textColorPrimary" />-->
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:theme="@style/Theme.Material3.Light.NoActionBar"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bnView"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="@color/navBarBackground"
+        app:itemIconTint="@color/selector_bottom_nav"
+        app:itemTextColor="@color/selector_bottom_nav"
+        app:itemRippleColor="@color/softMintRipple"
+        app:labelVisibilityMode="labeled"/>
+
+
+</RelativeLayout>

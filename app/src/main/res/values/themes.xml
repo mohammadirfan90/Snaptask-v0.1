@@ -1,43 +1,55 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Snaptaskv01" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary branding color -->
-        <item name="colorPrimary">#184A8C</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
 
-        <!-- Secondary color -->
-        <item name="colorSecondary">#A1E3B9</item>
-        <item name="colorOnSecondary">#2C2C2C</item>
+    <!-- App Theme -->
+    <style name="Theme.Snaptask" parent="Theme.Material3.DayNight.NoActionBar">
 
-        <!-- Surface and background -->
-        <item name="android:colorBackground">#F9FAFB</item>
-        <item name="colorSurface">#FFFFFF</item>
-        <item name="colorOnBackground">#2C2C2C</item>
-        <item name="colorOnSurface">#2C2C2C</item>
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/sapphireBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
 
-        <!-- Error and success -->
-        <item name="colorError">#FF7A5C</item>
-        <item name="colorOnError">#FFFFFF</item>
-        <item name="android:statusBarColor" tools:targetApi="l">#184A8C</item>
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/softMintGreen</item>
+        <item name="colorOnSecondary">@color/charcoalBlack</item>
 
-        <!-- Text colors -->
-        <item name="android:textColorPrimary">#2C2C2C</item> <!-- Charcoal Black -->
-        <item name="android:textColorSecondary">#6C757D</item> <!-- Slate Gray -->
+        <!-- Backgrounds and Surfaces -->
+        <item name="android:colorBackground">@color/whisperWhite</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnBackground">@color/charcoalBlack</item>
+        <item name="colorOnSurface">@color/charcoalBlack</item>
 
-        <!-- Optional: remove action bar if using custom toolbar -->
+        <!-- Error -->
+        <item name="colorError">@color/amberYellow</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/sapphireBlue</item>
+
+        <!-- Text Colors -->
+        <item name="android:textColorPrimary">@color/charcoalBlack</item>
+        <item name="android:textColorSecondary">@color/slateGray</item>
+
+        <!-- Action Bar & Title Bar -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <!-- System Navigation Bar -->
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:navigationBarDividerColor" tools:targetApi="28">@color/softMintGreen</item>
+
+        <!-- BottomNavigationView Styling -->
+<!--        <item name="bottomNavigationStyle">@style/Snaptask.BottomNavigation</item>-->
+        <item name="bottomNavigationStyle">@style/CustomBottomNav</item>
+
+
     </style>
+
+    <!-- BottomNavigation Custom Style -->
+    <style name="Snaptask.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/selector_bottom_nav</item>
+        <item name="itemTextColor">@color/selector_bottom_nav</item>
+        <item name="android:background">@color/white</item>
+        <item name="elevation">8dp</item>
+    </style>
+<!--    <item name="bottomNavigationStyle">@style/CustomBottomNav</item>-->
+
 </resources>
-
-
-
-<!--<resources xmlns:tools="http://schemas.android.com/tools">-->
-<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
-<!--    <style name="Base.Theme.Snaptask" parent="Theme.Material3.DayNight.NoActionBar">-->
-<!--        &lt;!&ndash; Customize your light theme here. &ndash;&gt;-->
-<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_light_primary</item> &ndash;&gt;-->
-<!--    </style>-->
-
-<!--    <style name="Theme.StoreDataAuthetication" parent="Base.Theme.Snaptask" />-->
-<!--</resources>-->

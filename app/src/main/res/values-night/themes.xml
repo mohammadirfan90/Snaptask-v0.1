@@ -1,23 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="Theme.Snaptaskv01" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">#184A8C</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimary">@color/sapphireBlue</item>
+        <item name="colorOnPrimary">@color/white</item>
 
-        <item name="colorSecondary">#A1E3B9</item>
-        <item name="colorOnSecondary">#2C2C2C</item>
+        <!-- Dark background -->
+        <item name="android:colorBackground">@color/charcoalBlack</item>
+        <item name="colorSurface">@color/charcoalBlack</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
 
-        <item name="android:colorBackground">#121212</item> <!-- or keep same as light -->
-        <item name="colorSurface">#1E1E1E</item>
-        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="android:statusBarColor">@color/sapphireBlue</item>
+        <item name="android:navigationBarColor">@color/charcoalBlack</item>
+        <item name="android:navigationBarDividerColor">@color/softMintGreen</item>
 
-        <item name="colorError">#FF7A5C</item>
-        <item name="colorSecondaryContainer">#2ECC71</item>
-        <item name="colorTertiary">#FFC107</item>
-
-        <item name="android:textColorPrimary">#FFFFFF</item>
-        <item name="android:textColorSecondary">#CCCCCC</item>
-
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+        <!-- Optional -->
+        <item name="bottomNavigationStyle">@style/Widget.Material3.BottomNavigationView</item>
     </style>
+
 </resources>

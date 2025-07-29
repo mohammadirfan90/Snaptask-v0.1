@@ -7,4 +7,10 @@
     <color name="charcoalBlack">#2C2C2C</color>
     <color name="slateGray">#6C757D</color>
     <color name="whisperWhite">#F9FAFB</color>
+    <color name="amberYellow">#FFC107</color>
+    <color name="darkNavyBlue">#002B5B</color> <!-- Active text/icon -->
+    <color name="grayIcon">#B0B0B0</color>     <!-- Inactive icons -->
+    <color name="navBarBackground">#E6ECF2</color> <!-- Nav bar bg -->
+    <color name="softMintRipple">#CCECE7</color> <!-- Selected background -->
+
 </resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomBottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/BottomNavActiveIndicator</item>
+    </style>
+
+    <!-- Makes the selection background invisible -->
+    <style name="BottomNavActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+    </style>
+</resources><!-- Custom BottomNavigationView without selection bubble -->
+
