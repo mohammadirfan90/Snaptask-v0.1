@@ -16,6 +16,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.snaptask_v01.utils.AppSessionManager;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
@@ -70,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (textEmail.matches(emailPattern)) {
                         if (!TextUtils.isEmpty(textPassword)) {
                             SignInUser();
+
                         } else {
                             editSignInPassword.setError("Password Field can't be empty");
                         }
@@ -83,26 +85,71 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void SignInUser() {
-        progressBar.setVisibility(View.VISIBLE);
-        btnSignIn.setVisibility(View.INVISIBLE);
+//    private void SignInUser() {
+//        progressBar.setVisibility(View.VISIBLE);
+//        btnSignIn.setVisibility(View.INVISIBLE);
+//
+//        mAuth.signInWithEmailAndPassword(textEmail, textPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//            @Override
+//            public void onSuccess(AuthResult authResult) {
+//                Toast.makeText(LoginActivity.this, "Login Successful !", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(LoginActivity.this, "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                progressBar.setVisibility(View.INVISIBLE);
+//                btnSignIn.setVisibility(View.VISIBLE);
+//            }
+//        });
+//
+//    }
+private void SignInUser() {
+    progressBar.setVisibility(View.VISIBLE);
+    btnSignIn.setVisibility(View.INVISIBLE);
 
-        mAuth.signInWithEmailAndPassword(textEmail, textPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Toast.makeText(LoginActivity.this, "Login Successful !", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LoginActivity.this, "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+    mAuth.signInWithEmailAndPassword(textEmail, textPassword)
+            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                @Override
+                public void onSuccess(AuthResult authResult) {
+                    String uid = authResult.getUser().getUid();
+                    db = FirebaseFirestore.getInstance(); // initialize Firestore
+
+                    db.collection("users").document(uid).get()
+                            .addOnSuccessListener(documentSnapshot -> {
+                                if (documentSnapshot.exists()) {
+                                    String email = documentSnapshot.getString("Email");
+                                    String activeRole = documentSnapshot.getString("activeRole");
+
+                                    // ✅ Set values in AppSessionManager
+                                    AppSessionManager.getInstance().setUid(uid);
+                                    AppSessionManager.getInstance().setEmail(email);
+                                    AppSessionManager.getInstance().setActiveRole(activeRole);
+
+                                    Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    finish();
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "User data not found!", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                    btnSignIn.setVisibility(View.VISIBLE);
+                                }
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(LoginActivity.this, "Error loading user data!", Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.INVISIBLE);
+                                btnSignIn.setVisibility(View.VISIBLE);
+                            });
+                }
+            })
+            .addOnFailureListener(e -> {
+                Toast.makeText(LoginActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.INVISIBLE);
                 btnSignIn.setVisibility(View.VISIBLE);
-            }
-        });
+            });
+}
 
-    }
 }

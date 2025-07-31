@@ -3,12 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClientHomeFragment">
+    tools:context=".fragment.ClientHomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="@string/hello_blank_fragment" />-->
+
+    <LinearLayout
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tvWelcome"
+        android:text="Welcome, Client!"
+        android:textSize="20sp"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/etSearchFreelancer"
+        android:hint="Search freelancers..."
+        android:drawableStart="@drawable/ic_search"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Top Rated Freelancers"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/rvTopFreelancers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"/>
+
+    </LinearLayout>
 
 </FrameLayout>

@@ -1,4 +1,4 @@
-package com.example.snaptask_v01;
+package com.example.snaptask_v01.fragment;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.snaptask_v01.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ClientHomeFragment#newInstance} factory method to
+ * Use the {@link ChatListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ClientHomeFragment extends Fragment {
+public class ChatListFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class ClientHomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ClientHomeFragment() {
+    public ChatListFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class ClientHomeFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ClientHome.
+     * @return A new instance of fragment InboxFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ClientHomeFragment newInstance(String param1, String param2) {
-        ClientHomeFragment fragment = new ClientHomeFragment();
+    public static ChatListFragment newInstance(String param1, String param2) {
+        ChatListFragment fragment = new ChatListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class ClientHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_client_home, container, false);
+        return inflater.inflate(R.layout.fragment_inbox, container, false);
     }
 }

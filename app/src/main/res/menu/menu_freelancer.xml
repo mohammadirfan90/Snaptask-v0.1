@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_freelancer_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_gigs_list"
+        android:icon="@drawable/ic_work"
+        android:title="My Gigs" />
+    <item
+        android:id="@+id/nav_freelacer_orders"
+        android:icon="@drawable/ic_order"
+        android:title="Orders" />
+    <item
+        android:id="@+id/nav_messages"
+        android:icon="@drawable/ic_message"
+        android:title="Chats" />
+
+    <item
+        android:id="@+id/nav_freelancer_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
+</menu>

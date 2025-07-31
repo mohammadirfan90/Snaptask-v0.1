@@ -71,7 +71,7 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/container"
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bnView"/>
@@ -81,12 +81,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_nav_menu"
+
         android:background="@color/navBarBackground"
         app:itemIconTint="@color/selector_bottom_nav"
         app:itemTextColor="@color/selector_bottom_nav"
         app:itemRippleColor="@color/softMintRipple"
         app:labelVisibilityMode="labeled"/>
 
-
+<!--//app:menu="@menu/menu_freelancer"-->
 </RelativeLayout>
