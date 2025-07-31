@@ -18,7 +18,7 @@ import com.example.snaptask_v01.fragment.FreelancerHomeFragment;
 import com.example.snaptask_v01.fragment.FreelancerOrdersFragment;
 import com.example.snaptask_v01.fragment.FreelancerProfileFragment;
 import com.example.snaptask_v01.fragment.GigListFragment;
-import com.example.snaptask_v01.fragment.SearchFreelancerFragment;
+import com.example.snaptask_v01.fragment.SearchGigFragment;
 import com.example.snaptask_v01.utils.AppSessionManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     if (id == R.id.nav_client_home) {
                         selectedFragment = new ClientHomeFragment();
                     } else if (id == R.id.nav_search_freelancers) {
-                        selectedFragment = new SearchFreelancerFragment();
+                        selectedFragment = new SearchGigFragment();
                     } else if (id == R.id.nav_messages) {
                         selectedFragment = new ChatListFragment();
                     } else if (id == R.id.nav_client_profile) {

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.FreelancerProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,5 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/buttonSignOut"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cornerRadius="10dp"-->
+<!--            android:paddingStart="20dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingEnd="20dp"-->
+<!--            android:paddingBottom="20dp"-->
+<!--            android:text="SIGN OUT"-->
+<!--            android:textSize="18sp"/>-->
 
 </FrameLayout>
