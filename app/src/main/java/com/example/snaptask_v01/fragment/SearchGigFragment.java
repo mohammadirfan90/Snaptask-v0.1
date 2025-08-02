@@ -40,10 +40,7 @@ public class SearchGigFragment extends Fragment {
     List<Gig> fullGigList = new ArrayList<>(); // all gigs
     List<Gig> filteredGigList = new ArrayList<>(); // visible list
 
-//
-//    public SearchGigFragment() {
-//        // Required empty public constructor
-//    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -54,22 +51,33 @@ public class SearchGigFragment extends Fragment {
 
         db = FirebaseFirestore.getInstance();
 
-//        gigAdapter = new GigAdapter(gigList, gig -> {
-//            Intent intent = new Intent(getContext(), CheckoutActivity.class);
-//            intent.putExtra("gigTitle", gig.getTitle());
-//            intent.putExtra("gigPrice", gig.getPrice());
-//            intent.putExtra("gigImageUrl", gig.getImageUrl());
-//            startActivity(intent);
-//        });
+
         // Initialize lists
         fullGigList = new ArrayList<>();
         filteredGigList = new ArrayList<>();
         gigAdapter = new GigAdapter(filteredGigList, gig -> {
-            Intent intent = new Intent(getContext(), CheckoutActivity.class);
-            intent.putExtra("gigTitle", gig.getTitle());
-            intent.putExtra("gigPrice", gig.getPrice());
-            intent.putExtra("gigImageUrl", gig.getImageUrl());
-            startActivity(intent);
+            String freelancerUid = gig.getUid();
+
+            db.collection("users") // or "freelancers" depending on your structure
+                    .document(freelancerUid)
+                    .get()
+                    .addOnSuccessListener(userSnapshot -> {
+                        if (userSnapshot.exists()) {
+                            String freelancerName = userSnapshot.getString("FullName"); // adjust field name if different
+
+                            Intent intent = new Intent(getContext(), CheckoutActivity.class);
+                            intent.putExtra("gigTitle", gig.getTitle());
+                            intent.putExtra("gigPrice", gig.getPrice());
+                            intent.putExtra("gigImageUrl", gig.getImageUrl());
+                            intent.putExtra("freelancerName", freelancerName);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getContext(), "Freelancer not found", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(getContext(), "Failed to fetch freelancer info", Toast.LENGTH_SHORT).show();
+                    });
         });
 
 
@@ -116,19 +124,8 @@ public class SearchGigFragment extends Fragment {
     }
 
 
-    //    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_search_gig, container, false);
-//    }
-    private void   {
+
+    private void filterGigs(String query) {
         filteredGigList.clear();
 
         if (query.trim().isEmpty()) {
