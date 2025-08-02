@@ -169,50 +169,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
-//    private void signUpUser(){
-//        progressBar.setVisibility(View.VISIBLE);
-//        btnSignUp.setVisibility(View.INVISIBLE);
-//        mAuth.createUserWithEmailAndPassword(textEmail,textPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-//            @Override
-//            public void onSuccess(AuthResult authResult) {
-////                Toast.makeText(SignUpActivity.this, "Sign Up Successful !", Toast.LENGTH_SHORT).show();
-////                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-////                startActivity(intent);
-////                finish();
-//            Map<String, Object> user = new HashMap<>();
-//                user.put("FullName", textFullName);
-//                user.put("Email", textEmail);
-//                user.put("MobileNumber", textMobile);
-//                user.put("activeRole", selectedRole);
-//                db.collection("users")
-//                        .add(user)
-//                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                @Override
-//                public void onSuccess(DocumentReference documentReference) {
-//                    Toast.makeText(RegisterActivity.this, "Account Created Successfully !", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            })
-//                    .addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    Toast.makeText(RegisterActivity.this, "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//        }
-//
-//
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                Toast.makeText(RegisterActivity.this,"Error" + e.getMessage(),Toast.LENGTH_SHORT).show();
-//                progressBar.setVisibility(View.INVISIBLE);
-//                btnSignUp.setVisibility(View.VISIBLE);
-//            }
-//        });
-//    }
+
     private void signUpUser() {
         progressBar.setVisibility(View.VISIBLE);
         btnSignUp.setVisibility(View.INVISIBLE);
@@ -226,6 +183,7 @@ public class RegisterActivity extends AppCompatActivity {
                     user.put("Email", textEmail);
                     user.put("MobileNumber", textMobile);
                     user.put("activeRole", selectedRole);
+
 
                     db.collection("users").document(uid).set(user)
                             .addOnSuccessListener(unused -> {

@@ -128,7 +128,7 @@ public class SearchGigFragment extends Fragment {
 //        // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_search_gig, container, false);
 //    }
-    private void filterGigs(String query) {
+    private void   {
         filteredGigList.clear();
 
         if (query.trim().isEmpty()) {

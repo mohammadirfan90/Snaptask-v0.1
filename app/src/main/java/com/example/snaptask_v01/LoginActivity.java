@@ -85,28 +85,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-//    private void SignInUser() {
-//        progressBar.setVisibility(View.VISIBLE);
-//        btnSignIn.setVisibility(View.INVISIBLE);
-//
-//        mAuth.signInWithEmailAndPassword(textEmail, textPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-//            @Override
-//            public void onSuccess(AuthResult authResult) {
-//                Toast.makeText(LoginActivity.this, "Login Successful !", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                Toast.makeText(LoginActivity.this, "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                progressBar.setVisibility(View.INVISIBLE);
-//                btnSignIn.setVisibility(View.VISIBLE);
-//            }
-//        });
-//
-//    }
 private void SignInUser() {
     progressBar.setVisibility(View.VISIBLE);
     btnSignIn.setVisibility(View.INVISIBLE);

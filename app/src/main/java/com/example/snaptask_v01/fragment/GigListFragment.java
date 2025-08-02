@@ -163,56 +163,6 @@ public class GigListFragment extends Fragment {
         imagePickerLauncher.launch(intent);
     }
 
-//    private void uploadGigToFirebase() {
-//        String title = etGigTitle.getText().toString().trim();
-//        String desc = etGigDescription.getText().toString().trim();
-//        String priceStr = etGigPrice.getText().toString().trim();
-//
-//        if (title.isEmpty() || desc.isEmpty() || priceStr.isEmpty() || selectedImageUri == null) {
-//            Toast.makeText(getContext(), "All fields and image are required", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        int price = Integer.parseInt(priceStr);
-//        String gigId = db.collection("gigs").document().getId();
-//        String imagePath = "gig_images/" + gigId + ".jpg";
-//
-//        FirebaseStorage.getInstance().getReference(imagePath)
-//                .putFile(selectedImageUri)
-//                .continueWithTask(task -> {
-//                    if (!task.isSuccessful()) {
-//                        throw task.getException();
-//                    }
-//                    return FirebaseStorage.getInstance().getReference(imagePath).getDownloadUrl();
-//                })
-//                .addOnSuccessListener(uri -> {
-//                    String imageUrl = uri.toString();
-//
-//                    Gig gig = new Gig();
-//                    gig.setId(gigId);
-//                    gig.setTitle(title);
-//                    gig.setDescription(desc);
-//                    gig.setPrice(price);
-//                    gig.setImageUrl(imageUrl);
-//                    gig.setUid(auth.getCurrentUser().getUid());
-//                    gig.setTimestamp(new Date().getTime());
-//
-//                    db.collection("gigs").document(gigId)
-//                            .set(gig)
-//                            .addOnSuccessListener(aVoid -> {
-//                                Toast.makeText(getContext(), "Gig posted!", Toast.LENGTH_SHORT).show();
-//                                bottomSheetDialog.dismiss();
-//                                loadGigs(); // refresh
-//                            })
-//                            .addOnFailureListener(e -> {
-//                                Toast.makeText(getContext(), "Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                            });
-//                })
-//                .addOnFailureListener(e -> {
-//                    Toast.makeText(getContext(), "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                });
-//
-//    }
     private void uploadGigToFirebase() {
         String title = etGigTitle.getText().toString().trim();
         String desc = etGigDescription.getText().toString().trim();

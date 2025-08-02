@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_work"
+        android:src="@drawable/dummy"
         android:background="@color/whisperWhite"
         android:contentDescription="Gig Image"
         android:clickable="true"
